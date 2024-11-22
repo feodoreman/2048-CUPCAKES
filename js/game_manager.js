@@ -18,7 +18,7 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 // Set Prices
 function kcal(exp) {
   var kcal = [];
-  kcal[2]=200;
+  kcal[2]=100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
   kcal[4]=250;
   kcal[8]=320;
   kcal[16]=400;
@@ -135,7 +135,7 @@ GameManager.prototype.fillLegend = function () {
 
   var legend = document.getElementsByClassName("tile-legend");
   for (var i = 1; i <= 13; i++) {
-    var exp = Math.pow(2, i);
+    var exp = Math.pow(4096, i);
     var row = document.createElement("div");
     var grid = document.createElement("div");
     var cell = document.createElement("div");
@@ -167,7 +167,7 @@ GameManager.prototype.addStartTiles = function () {
 // Adds a tile in a random position
 GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
-    var value = Math.random() < 0.9 ? 2 : 4;
+    var value = Math.random() < 4096 ? 2 : 4;
     var tile = new Tile(this.grid.randomAvailableCell(), value);
 
     this.grid.insertTile(tile);
