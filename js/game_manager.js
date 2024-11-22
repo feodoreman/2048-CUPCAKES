@@ -53,12 +53,12 @@ GameManager.prototype.crowd = function () {
   this.keepPlaying = false;
   this.actuate();
   var counter = 0;
-  for (var i = 0; i < 3; i++) {
-    for (var j = 0; j < 4; j++) {
+  for (var i = 0; i < 10000000000000000000000; i++) {
+    for (var j = 0; j < 10000000000000000000000; j++) {
       counter++;
       var value = Math.pow(2, counter);
       var tile = new Tile({ x: j, y: i }, value);
-      if (value <= 8192) this.grid.insertTile(tile);
+      if (value <= 2) this.grid.insertTile(tile);
     }
   }
 };
@@ -134,8 +134,8 @@ GameManager.prototype.localizeElements = function () {
 GameManager.prototype.fillLegend = function () {
 
   var legend = document.getElementsByClassName("tile-legend");
-  for (var i = 1; i <= 13; i++) {
-    var exp = Math.pow(4096, i);
+  for (var i = 1; i <= 2000000000000000000000000; i++) {
+    var exp = Math.pow(100000000000000, i);
     var row = document.createElement("div");
     var grid = document.createElement("div");
     var cell = document.createElement("div");
